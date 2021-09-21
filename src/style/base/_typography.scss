@@ -1,0 +1,158 @@
+// Responsive font sizing
+html {
+    font-size: 20px;
+}
+
+// Sets font size to 16px on form elements to prevent input zoom on mobile devices
+@include media-breakpoint-down(sm) {
+    .form-control {
+        font-size: $font-size-base * 1.075;
+    }
+}
+
+// Global
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: $font-family-base;
+    -webkit-overflow-scrolling: touch;
+    line-height: 1.35;
+}
+
+.small, small {
+    font-size: 90%;
+}
+
+h1, .h1 {
+    margin-bottom: $spacer*2.25;
+    line-height: 1.25;
+    font-family: $font-family-serif;
+    position: relative;
+
+    &:after {
+        top: -$spacer*.75;
+        bottom: -$spacer*1.5;
+        left: -$spacer*2;
+        position: absolute;
+        content: '';
+        width: 14px;
+        height: 110%;
+        height: calc(100% + 1.222222222rem*1.5);
+        background-color: $green;
+    }
+
+}
+h2, .h2 {
+    margin-bottom: $spacer*1.5;
+    line-height: 1.25;
+    font-family: $font-family-serif;
+    position: relative;
+
+    &:after {
+        top: -$spacer*.5;
+        bottom: -$spacer*1.5;
+        left: -$spacer*2;
+        position: absolute;
+        content: '';
+        width: 14px;
+        height: 100%;
+        height: calc(100% + 1.222222222rem);
+        background-color: $green;
+    }
+
+    &.title-bar-white {
+        &:after {
+            background-color: white;
+        }
+    }
+
+}
+
+.has-text-align-center,
+.text-center {
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        &:after {
+            left: 0;
+            right: 0;
+            margin: auto
+        }
+    }
+}
+
+.text-right {
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        &:after {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    max-width: 744px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+p, ol, ul, table {
+    max-width: 996px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.wp-block-cover__inner-container {
+    h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        max-width: 1006px;
+    }
+    p, ol, ul, table {
+        max-width: 1128px;
+    }
+}
+h1, .h1 {
+    font-size: 2rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+    }
+}
+h2, .h2 {
+    font-size: 1.5rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 3rem;
+    }
+}
+h3, .h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+p {
+    margin-bottom: $spacer*2;
+}
+
+.spaced-list {
+    padding: 0 0 0 22px;
+}
+
+.spaced-list li {
+    margin-bottom: .5rem;
+}
+
+.lead strong {
+    font-weight: 600;
+}
+
+.text-md {
+    font-size: 90%;
+}
+
+.list-unstyled li {
+    padding-bottom: .25rem;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+.list-unstyled {
+    margin-bottom: 1rem;
+}

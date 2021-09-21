@@ -1,0 +1,17 @@
+#legal-menu {
+    width: 100%;
+    margin-bottom: $spacer/1.5;
+    .nav-link {
+        padding: 0 $spacer/2;
+        text-transform: uppercase;
+    }
+    @include media-breakpoint-up(xs) {
+        flex-direction: row;
+        justify-content: center;
+    }
+    @include media-breakpoint-down(xs) {
+        .nav-link {
+            padding: $spacer/5;
+        }
+    }
+}

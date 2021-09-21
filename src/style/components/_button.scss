@@ -1,0 +1,47 @@
+button, .btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: $spacer/2;
+}
+
+.btn {
+    font-size: .9rem;
+    border-radius: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: $spacer*.8 $spacer*1.2;
+}
+
+.btn-primary {
+    @extend .btn-primary;
+}
+
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button {
+    @extend .btn;
+    @extend .btn-primary;
+}
+
+input#gform_submit_button_1 {
+    @extend .btn;
+    @extend .btn-primary;
+}
+
+.page-link {
+    @extend .btn;
+    padding-left: $spacer/1.5;
+    padding-right: $spacer/1.5;
+    background-color: $dark;
+    min-width: $spacer*2;
+    border: 1px solid $blue;
+    &:hover {
+        background-color: darken($blue,7.5%);
+        border-color: $blue;
+        color: white;
+    }
+}
+
+.page-link.current {
+    background-color: $blue;
+    color: white;
+}

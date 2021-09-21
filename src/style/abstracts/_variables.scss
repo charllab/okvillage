@@ -1,0 +1,94 @@
+// Variables
+//
+// Define variables that will later override bootstrap defaults
+
+$enable-print-styles: false;
+
+// brand-guide
+$yellow : #FFE600;
+$blue: #0074FF;
+$offwhite: #88979f;
+$green: #18D16C;
+
+
+// Colors
+$primary: $blue;
+$secondary: $green;
+$body-color: #606060;
+$dark: #202020;
+$soft: #b2c57f;
+$headings-color: $body-color;
+$input-focus-border-color: $primary;
+$link-color: $blue;
+
+$selection-color: #d9edf7;
+$box-shadow: 0 1rem 2rem rgba(#000, .2);
+
+$headings-font-weight: 900;
+
+// Breakpoints
+$grid-breakpoints: (
+    xxs: 0,
+    xs: 568px,
+    sm: 667.5px,
+    md: 767.5px,
+    lg: 991.5px,
+    xl: 1199.5px,
+    xxl: 1439.5px,
+    xxxl: 1919.5px
+);
+
+$container-max-widths: (
+    xxs: 538px,
+    xs: 668px,
+    sm: 700.5px,
+    md: 840.5px,
+    lg: 1168.5px,
+    xl: 1436.5px,
+    xxl: 1640px,
+    xxxl: 1640px
+);
+
+// Misc
+
+$spacer: 1.222222222rem;
+
+$spacers: () !default;
+$spacers: map-merge((
+    0: 0,
+    1: ($spacer * 1),
+    2: ($spacer * 2),
+    3: ($spacer * 3),
+    4: ($spacer * 4),
+    5: ($spacer * 5),
+    6: ($spacer * 6),
+    7: ($spacer * 7),
+    8: ($spacer * 8),
+    9: ($spacer * 9),
+    10: ($spacer * 10),
+    11: ($spacer * 11),
+    12: ($spacer * 12),
+    13: ($spacer * 13),
+    14: ($spacer * 14),
+    35: ($spacer * .35),
+    250: ($spacer * .25),
+    50: ($spacer * .5),
+    75: ($spacer * .75),
+    125: ($spacer * 1.25),
+    150: ($spacer * 1.5),
+    175: ($spacer * 1.75),
+    225: ($spacer * 2.25),
+    25: ($spacer * 2.5),
+    350: ($spacer * 3.5)
+
+), $spacers);
+
+
+// Fonts
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$font-family-serif: $font-family-sans-serif;
+$headings-font-family: $font-family-serif;
+
+// Figure
+$figure-margin: $spacer * 2.5;
+$matrix-block-margin: $figure-margin;

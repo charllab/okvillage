@@ -1,0 +1,551 @@
+
+.gform_wrapper {
+    @extend .container;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: $spacer/2;
+    padding-bottom: $spacer/2;
+    @include media-breakpoint-up(lg) {
+        padding-top: $spacer;
+        padding-bottom: $spacer;
+    }
+}
+
+// form description styling
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description {
+    font-style: italic;
+    font-size: .7rem;
+    color: lighten($primary, 25%);
+    padding-top: 8px;
+}
+
+// name field custom label styling
+
+#input_2_14 label {
+    font-style: italic;
+    font-size: .7rem;
+    color: lighten($primary, 25%);
+    margin-top: 8px;
+    padding-bottom: 16px;
+}
+
+
+// checkbox list items styling
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: start;
+    align-content: center;
+
+    label {
+        margin-left: $spacer/4;
+    }
+}
+
+// section break styling
+
+body .gform_wrapper .gform_body .gform_fields .gsection {
+    border: none;
+    border-top: 1px solid lighten($primary, 45%);
+    margin-top: $spacer*1.5;
+    padding-top: $spacer*.5;
+
+    &:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+}
+
+// label sizing override
+
+.gform_wrapper label.gfield_label, .gform_wrapper legend.gfield_label {
+    font-size: .95rem !important;
+    text-transform: uppercase;
+}
+
+// over ride section titles
+
+li.gsection + li {
+    margin-top: 0 !important;
+}
+
+li.gsection {
+    margin-bottom: $spacer*.25 !important;
+}
+
+.gform_wrapper .gsection .gfield_label, .gform_wrapper h2.gsection_title, .gform_wrapper h3.gform_title {
+    font-size: 1.025rem !important;
+    color: lighten($dark, 7%);
+}
+
+// single text field
+
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text] {
+    border: 1px solid white;
+    background-color: $dark;
+    color: $body-color;
+    padding-left: 10px !important;
+}
+
+// dropdown style + remove default arrow
+
+body .gform_wrapper .gform_body .gform_fields .gfield select {
+    border: 1px solid lighten($primary, 25%);
+    padding-left: 10px;
+    background-color: lighten($primary, 50%);
+    color: $body-color;
+    // remove dropdown arrow
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+// add dropdown custom arrow + positioning
+
+.ginput_container.ginput_container_select {
+    position: relative;
+
+    &:after {
+        content: '▾';
+        position: absolute;
+        top: 2px;
+        bottom: 0;
+        right: 10px;
+        z-index: 9999;
+    }
+}
+
+// textarea styling
+
+body .gform_wrapper .gform_body .gform_fields .gfield textarea {
+    border: 1px solid lighten($primary, 25%);
+    background-color: lighten($primary, 50%);
+    color: $body-color;
+    padding-left: 10px !important;
+}
+
+
+label {
+    font-family: $font-family-sans-serif;
+    margin-bottom: 0;
+    font-size: .777777778rem;
+    color: $yellow;
+    font-family: $headings-font-family;
+}
+
+.custom-select, .custom-text {
+    border-radius: 0px;
+    border-color: $primary;
+}
+
+// search
+
+.topsearchbox {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.vertical-searchform-wrapper {
+    background-color: $primary;
+    padding: 1rem;
+    border-radius: .25rem;
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: 1rem 2rem;
+        margin-bottom: 0;
+    }
+
+    .num-increment-wrap {
+        margin-left: .5rem;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    > div {
+        margin: .5rem .25rem;
+
+        @include media-breakpoint-up(lg) {
+            margin: 0 .5rem;
+        }
+    }
+
+    label {
+        padding-right: .25rem;
+        font-size: .75rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 90%;
+        }
+    }
+}
+
+.num-increment-wrap {
+    min-width: 150px;
+    margin-left: auto;
+}
+
+.js-button-increment {
+    min-width: 40px;
+    justify-content: center;
+}
+
+
+.listing-page-sidemenu-form {
+    font-size: 1rem;
+
+    label {
+        font-size: 90%;
+        width: 100%;
+        cursor: pointer;
+        line-height: 1.75;
+    }
+
+    .custom-checkbox {
+        padding-bottom: .5rem;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        margin-left: auto;
+        margin-bottom: .8rem;
+    }
+
+    .custom-control-label::before {
+        background: $white;
+    }
+}
+
+.listing-page-sidemenu-content-maxwidth {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listing-page-sidemenu-block {
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 2rem;
+    }
+}
+
+.js-num-increment {
+    margin-bottom: $spacer;
+
+    .num-increment-wrap {
+        display: flex;
+    }
+
+    .form-control[readonly] {
+        width: 3rem;
+        margin: 0 5px;
+        border-radius: 0;
+        border: 1px solid rgba($primary, .25);
+        background-color: $white;
+    }
+
+    .btn {
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        padding: .25rem .75rem;
+        font-size: 110%;
+    }
+}
+
+label.listing-page-sidemenu__label {
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+
+.gform_button {
+    @extend .btn;
+    color: white;
+    background-color: $primary;
+
+    &:hover,
+    &:active {
+        background-color: darken($primary, 10%);
+        color: white;
+    }
+}
+
+// text-area border
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel],
+body .gform_wrapper .gform_body .gform_fields .gfield textarea {
+    border: 1px solid white;
+    background-color: $dark;
+}
+
+// thank you message
+
+div#gform_confirmation_message_1 {
+    color: $primary;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+// custom select
+
+/* class applies to select element itself, not a wrapper element */
+.medium.gfield_select {
+    display: block;
+    color: #222;
+    line-height: 1.3;
+    padding: 5px 3px !important;
+    width: 100%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #bfbfbf;
+    box-shadow: none;
+    border-radius: 2px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+    linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+}
+
+/* Hide arrow icon in IE browsers */
+.medium.gfield_select::-ms-expand {
+    display: none;
+}
+
+/* Hover style */
+.medium.gfield_select:hover {
+    border-color: #888;
+}
+
+/* Focus style */
+.medium.gfield_select:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+
+/* Set options to normal weight */
+.medium.gfield_select option {
+    font-weight: normal;
+}
+
+/* Support for rtl text, explicit support for Arabic and Hebrew */
+*[dir="rtl"] .medium.gfield_select, :root:lang(ar) .medium.gfield_select, :root:lang(iw) .medium.gfield_select {
+    background-position: left .7em top 50%, 0 0;
+    padding: .6em .8em .5em 1.4em;
+}
+
+/* Disabled styles */
+.medium.gfield_select:disabled, .medium.gfield_select[aria-disabled=true] {
+    color: graytext;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+}
+
+.medium.gfield_select:disabled:hover, .medium.gfield_select[aria-disabled=true] {
+    border-color: #aaa;
+}
+
+/* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
+Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+
+#mc_embed_signup form {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.mc-field-group {
+    display: inline-block;
+}
+
+/* positions input field horizontally */
+#mc_embed_signup input.email {
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+    font-size: 15px;
+    border: 1px solid #ABB0B2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #343434;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0px 0.4em;
+    display: inline-block;
+    margin: 0;
+    width: 350px;
+    vertical-align: top;
+}
+
+#mc_embed_signup label {
+    display: block;
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+#mc_embed_signup .clear {
+    display: inline-block;
+}
+
+/* positions button horizontally in line with input */
+
+#mc_embed_signup .button {
+    font-size: 13px;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    letter-spacing: .03em;
+    color: #fff;
+    background-color: #aaa;
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 18px;
+    display: inline-block;
+    margin: 0;
+    transition: all 0.23s ease-in-out 0s;
+}
+
+#mc_embed_signup .button:hover {
+    background-color: #777;
+    cursor: pointer;
+}
+
+#mc_embed_signup div#mce-responses {
+    float: left;
+    top: -1.4em;
+    padding: 0em .5em 0em .5em;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 5%;
+    clear: both;
+}
+
+#mc_embed_signup div.response {
+    margin: 1em 0;
+    padding: 1em .5em .5em 0;
+    font-weight: bold;
+    float: left;
+    top: -1.5em;
+    z-index: 1;
+    width: 80%;
+}
+
+#mc_embed_signup #mce-error-response {
+    display: none;
+}
+
+#mc_embed_signup #mce-success-response {
+    color: #529214;
+    display: none;
+}
+
+#mc_embed_signup label.error {
+    display: block;
+    float: none;
+    width: auto;
+    margin-left: 1.05em;
+    text-align: left;
+    padding: .5em 0;
+}
+
+@media (max-width: 768px) {
+    #mc_embed_signup input.email {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    #mc_embed_signup .clear {
+        display: block;
+        width: 100%
+    }
+    #mc_embed_signup .button {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 100%;
+}
+
+
+//captcha mobile fix
+
+@media (max-width: 361.98px) {
+    #gform_wrapper_1 div.ginput_recaptcha {
+        -ms-transform: scale(.8);
+        transform: scale(.8);
+        -webkit-transform: scale(.8);
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0
+    }
+}
+
+// error message
+
+.gform_wrapper .gfield_error .gfield_repeater_cell label,
+.gform_wrapper .gfield_error label,
+.gform_wrapper [aria-invalid=true]+label,
+.gform_wrapper label+[aria-invalid=true] {
+    color: $yellow !important;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield_error {
+    background-color: $dark;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield_error .validation_message {
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    background-color: #f67600;
+    border: 1px solid #f67600;
+    padding: $spacer/5;
+}
+
+body .gform_wrapper .gform_validation_errors  {
+    background-color: #f67600;
+    border-width: 10px;
+    border-color: #f67600;
+    padding: $spacer/2;
+    h2 {
+        color: white;
+        &:after {
+            display: none;
+        }
+    }
+    .gform-icon--close:before {
+        display: none;
+    }
+
+}
