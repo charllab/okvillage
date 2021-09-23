@@ -7,7 +7,7 @@ $enable-print-styles: false;
 // brand-guide
 $yellow : #FFE600;
 $blue: #0074FF;
-$offwhite: #88979f;
+$offwhite: #f8f8f8;
 $green: #18D16C;
 
 
@@ -40,18 +40,18 @@ $grid-breakpoints: (
 
 $container-max-widths: (
     xxs: 538px,
-    xs: 668px,
+    xs: 619.5px,
     sm: 700.5px,
-    md: 840.5px,
-    lg: 1168.5px,
-    xl: 1436.5px,
-    xxl: 1640px,
+    md: 719.5px,
+    lg: 943.5px,
+    xl: 1151.5px,
+    xxl: 1391.5px,
     xxxl: 1640px
 );
 
 // Misc
 
-$spacer: 1.222222222rem;
+$spacer: 1.2rem;//24px
 
 $spacers: () !default;
 $spacers: map-merge((

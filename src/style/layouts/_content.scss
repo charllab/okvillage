@@ -2,25 +2,43 @@
     z-index: 1;
 }
 
+.block__tint-overlay {
+    background-color: #000;
+    opacity: .6;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 
-/* set height of first block cover item to 90vh */
-#content > .wp-block-cover {
-    &:first-of-type {
-        min-height: 92vh;
-        margin-top: 0;
+.front-page#content {
+    @include media-breakpoint-up(md) {
+        padding-top: 0 !important;
+    }
+
+}
+
+/* set height of first block cover item to 100vh */
+#content > .hero-block {
+    & > .wp-block-group__inner-container > .wp-block-cover {
+        @include media-breakpoint-up(md) {
+            min-height: 100vh;
+            margin-top: 0;
+        }
+
+    }
+    @include media-breakpoint-down(xs) {
+        .wp-block-cover {
+            margin-bottom: $spacer !important;
+        }
     }
 }
 
 /* media-text min-height and spacing  */
 .wp-block-media-text,
 .wp-block-cover {
-    margin-top: $spacer*2;
-    margin-bottom: $spacer*2;
 
     @include media-breakpoint-up(md) {
         min-height: 30vh;
-        margin-top: $spacer*6;
-        margin-bottom: $spacer*6;
     }
 
     /* media-text-img border and min-height */
@@ -60,6 +78,11 @@
     margin: 0 calc(50% - 50vw);
     max-width: 100vw;
     width: 100vw;
+}
+
+// general margin
+.wp-block-cover {
+    margin-bottom: $spacer*4;
 }
 
 /* block cover hack to extend as bootstrap container */
@@ -120,13 +143,8 @@
 
 /* columns margins  */
 .wp-block-columns {
-    margin-top: $spacer*2;
-    margin-bottom: $spacer*2;
-
-    @include media-breakpoint-up(md) {
-        margin-top: $spacer*6;
-        margin-bottom: $spacer*6;
-    }
+    margin-top: $spacer*3;
+    margin-bottom: $spacer*4;
 }
 
 /* column min-height */
@@ -183,11 +201,11 @@
 }
 
 .has-grey-background-color {
-    background-color: #202020 !important;
+    background-color: #606060 !important;
 }
 
 .has-grey-color {
-    color: #202020 !important;
+    color: #606060 !important;
 }
 
 .has-white-background-color {
@@ -256,6 +274,7 @@ body.page-id-146 {
     main#content {
         @extend .container;
     }
+
     h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, ol, ul, table {
         max-width: 992px;
         margin-left: 0;
@@ -295,6 +314,7 @@ body.page-id-146 {
             display: none;
         }
     }
+
     figure {
         img {
             border-radius: $spacer*2 0 $spacer*2 0;
@@ -311,6 +331,7 @@ body.page-id-146 {
     display: block;
     border-radius: 50%;
     cursor: pointer;
+
     &:after {
         content: '';
         width: $spacer;
@@ -367,16 +388,13 @@ body.page-id-146 {
     }
 }
 
-@keyframes heartbeat
-{
-    0%
-    {
-        transform: scale( 1 );
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
         opacity: .9;
     }
-    100%
-    {
-        transform: scale( 1.75 );
+    100% {
+        transform: scale(1.75);
         opacity: 0;
     }
 }
@@ -385,46 +403,55 @@ body.page-id-146 {
     //Daily Production Capacity of 600lbs
     top: 16.5%;
     left: 68%;
+
     .feature-point {
         &:after {
             animation-delay: 5.85s;
         }
     }
 }
+
 #feature-position-2 {
     //Hydorcarbon Extraction
     top: 25%;
     left: 35%;
+
     .feature-point {
         &:after {
             animation-delay: 10.35s;
         }
     }
 }
+
 #feature-position-3 {
     //Packaging Services
     top: 63.5%;
     left: 50%;
+
     .feature-point {
         &:after {
             animation-delay: 15.87s;
         }
     }
 }
+
 #feature-position-4 {
     //Proudly Servicing Small Producers
     top: 53.5%;
     left: 75%;
+
     .feature-point {
         &:after {
             animation-delay: 20.25s;
         }
     }
 }
+
 #feature-position-5 {
     //Vertically Integrated
     top: 75%;
     left: 14%;
+
     .feature-point {
         &:after {
             animation-delay: 25.96s;
@@ -482,9 +509,127 @@ body.page-id-146 {
                         right: 0;
                     }
                 }
+
                 margin-left: auto;
-                text-align: right ;
+                text-align: right;
             }
         }
+    }
+}
+
+// hero section
+.w-100 {
+    .wp-block-group__inner-container {
+        max-width: none !important;
+        padding: 0;
+    }
+}
+
+// hero cta
+.hero-cta {
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: $spacer;
+    }
+
+    @include media-breakpoint-up(sm) {
+        right: 0;
+        bottom: 0;
+        z-index: 9;
+        position: absolute;
+        width: 90%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 80%;
+    }
+
+
+    .wp-block-group__inner-container {
+
+        @include media-breakpoint-up(xs) {
+            display: flex;
+        }
+        align-items: center;
+
+        p {
+            margin-bottom: 0;
+
+            a {
+                font-weight: bold;
+                color: $blue !important;
+                font-size: 1.2rem;
+            }
+        }
+
+        .wp-block-button {
+            @include media-breakpoint-down(xs) {
+                margin-top: $spacer;
+                width: 100%;
+                display: block;
+            }
+        }
+
+        a.wp-block-button__link {
+            margin-bottom: 0;
+        }
+
+    }
+}
+
+// cards
+.wp-block-group.cards {
+
+    .wp-block-group__inner-container {
+        padding: 0;
+    }
+
+    .wp-block-column {
+        margin-bottom: $spacer;
+        padding: $spacer $spacer*1.2;
+        border: 1px solid #D0D0D0;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        @include media-breakpoint-up(xs) {
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+
+        * {
+            width: 100%;
+        }
+
+        p {
+            margin-bottom: $spacer*1.2;
+            font-size: 0.9rem;
+        }
+
+        p:last-child {
+            margin-bottom: $spacer/2;
+            margin-top: auto;
+        }
+
+    }
+
+    @media (min-width: 782px) {
+        .wp-block-columns {
+            flex-wrap: wrap;
+        }
+    }
+    @media (min-width: 600px) and (max-width: 1200px) {
+
+        .wp-block-column:not(:only-child) {
+            flex-basis: calc(50% - 1em) !important;
+        }
+    }
+
+}
+
+.wp-block-image {
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 }

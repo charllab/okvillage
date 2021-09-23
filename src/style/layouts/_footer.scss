@@ -1,3 +1,36 @@
+.footer-logo {
+    width: 416px;
+}
+
+
+// footer cta
+.footer-cta {
+
+    @media (min-width: 2200px) {
+        max-width: 1640px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative !important;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: $spacer;
+    }
+
+    @include media-breakpoint-up(sm) {
+        right: 0;
+        top: 0;
+        z-index: 9;
+        position: absolute;
+        width: 90%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 80%;
+    }
+}
+
 #legal-menu {
     width: 100%;
     margin-bottom: $spacer/1.5;

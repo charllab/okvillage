@@ -97,7 +97,7 @@ function wpdc_add_custom_gutenberg_color_palette() {
             [
                 'name'  => esc_html__( 'Grey', 'wpdc' ),
                 'slug'  => 'grey',
-                'color' => '#202020',
+                'color' => '#606060',
             ],
             [
                 'name'  => esc_html__( 'White', 'wpdc' ),
