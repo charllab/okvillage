@@ -34,7 +34,7 @@ if (!function_exists('custom_after_setup_theme')) {
     function custom_after_setup_theme()
     {
         remove_theme_support('custom-background');
-        remove_theme_support('post-thumbnails');
+        add_theme_support( 'post-thumbnails' );
 
         register_nav_menus([
             'primary' => 'Primary Menu',
