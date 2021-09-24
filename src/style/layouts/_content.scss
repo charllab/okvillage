@@ -633,3 +633,18 @@ body.page-id-146 {
         height: auto;
     }
 }
+
+.program-top-bar {
+    border-top: 14px solid $blue;
+}
+.program-nav-tabs {
+    a {
+        color: $body-color !important;
+        font-weight: bold;
+
+    }
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    border-color: #707070 #707070 #fff;
+}

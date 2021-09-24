@@ -33,7 +33,7 @@ h1, .h1 {
     &:after {
         top: -$spacer*.75;
         bottom: -$spacer*1.5;
-        left: -$spacer*1.95;
+        left: -$spacer*1.5;
         position: absolute;
         content: '';
         width: 14px;
@@ -53,7 +53,7 @@ h2, .h2 {
     &:after {
         top: -$spacer*.5;
         bottom: -$spacer*1.5;
-        left: -$spacer*1.65;
+        left: -$spacer*1.5;
         position: absolute;
         content: '';
         width: 10px;
