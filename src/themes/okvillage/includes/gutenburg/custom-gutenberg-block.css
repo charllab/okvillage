@@ -1,0 +1,9 @@
+/* Admin */
+
+.wp-testimonial-carousel {
+    min-height: 100px;
+}
+
+.wp-testimonial-carousel .components-placeholder__label {
+    margin-bottom: 0;
+}

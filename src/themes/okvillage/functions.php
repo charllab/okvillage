@@ -141,3 +141,23 @@ function wpdc_define_font_sizes() {
     );
 }
 add_action( 'after_setup_theme', 'wpdc_define_font_sizes' );
+
+// register custom blocks
+
+function register_acf_block_types()
+{
+    acf_register_block_type([
+        'name' => 'simple-accordion',
+        'title' => __('Simple Accordion'),
+        'description' => __('A simple accordian witj collapse behavior.'),
+        'render_template' => 'includes/gutenburg/simple-accordion.php',
+        'category' => 'formatting',
+        'icon' => 'welcome-widgets-menus',
+        'keywords' => ['accordion'],
+        'enqueue_style' => get_template_directory_uri().'/includes/gutenburg/custom-gutenberg-block.css',
+    ]);
+}
+
+if (function_exists('acf_register_block_type')) {
+    add_action('acf/init', 'register_acf_block_types');
+}

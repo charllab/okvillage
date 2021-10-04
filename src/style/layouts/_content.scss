@@ -2,6 +2,10 @@
     z-index: 1;
 }
 
+.max-100 {
+    max-width: 100% !important;
+}
+
 .block__tint-overlay {
     background-color: #000;
     opacity: .6;
@@ -647,4 +651,27 @@ body.page-id-146 {
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
     border-color: #707070 #707070 #fff;
+}
+
+.accordion-btn  {
+    cursor: pointer;
+    &:before {
+        background-color: $primary;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        left: auto;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        font-size: 1rem;
+        line-height: 1;
+        content: "+";
+        position: absolute;
+        right: 0;
+        font-weight: normal;
+        color: white;
+    }
 }
