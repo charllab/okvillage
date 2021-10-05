@@ -149,7 +149,7 @@ function register_acf_block_types()
     acf_register_block_type([
         'name' => 'simple-accordion',
         'title' => __('Simple Accordion'),
-        'description' => __('A simple accordian witj collapse behavior.'),
+        'description' => __('A simple accordian with collapse behavior.'),
         'render_template' => 'includes/gutenburg/simple-accordion.php',
         'category' => 'formatting',
         'icon' => 'welcome-widgets-menus',
