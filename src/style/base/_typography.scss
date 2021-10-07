@@ -1,6 +1,9 @@
 // Responsive font sizing
 html {
-    font-size: 20px;
+    font-size: 18px;
+    @include media-breakpoint-up(xxl) {
+        font-size: 20px;
+    }
 }
 
 // Sets font size to 16px on form elements to prevent input zoom on mobile devices
@@ -71,6 +74,14 @@ h2, .h2 {
 }
 
 h1, .h1, h2, .h2 {
+    @include media-breakpoint-down(xl) {
+        padding-left: 25px;
+        &:after {
+
+            width: 8px;
+            left: 0;
+        }
+    }
     @include media-breakpoint-down(sm) {
         padding-left: 15px;
     &:after {
@@ -125,14 +136,23 @@ p, ol, ul, table {
 
 h1, .h1 {
     font-size: 2rem;
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xxl) {
         font-size: 4rem;
+    }
+}
+
+.page {
+    h1, .h1 {
+        font-size: 2rem;
+        @include media-breakpoint-up(xxl) {
+            font-size: 3.6rem;
+        }
     }
 }
 
 h2, .h2 {
     font-size: 1.5rem;
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xxl) {
         font-size: 3rem;
     }
 }
@@ -140,10 +160,14 @@ h2, .h2 {
 h3, .h3 {
     font-size: 1.2rem;
     font-weight: bold;
+    margin-bottom: $spacer*1.25;
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.8rem;
+    }
 }
 
 p {
-    margin-bottom: $spacer*2;
+    margin-bottom: $spacer*1.5;
 }
 
 .spaced-list {
@@ -176,4 +200,10 @@ p {
 
 .ff-heading {
     font-family: $font-family-serif;
+}
+
+td {
+    vertical-align: top;
+    padding-bottom: $spacer/2;
+    line-height: 1.5;
 }

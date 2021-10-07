@@ -149,12 +149,21 @@ function register_acf_block_types()
     acf_register_block_type([
         'name' => 'simple-accordion',
         'title' => __('Simple Accordion'),
-        'description' => __('A simple accordian with collapse behavior.'),
+        'description' => __('A simple accordion with collapse behavior.'),
         'render_template' => 'includes/gutenburg/simple-accordion.php',
         'category' => 'formatting',
         'icon' => 'welcome-widgets-menus',
         'keywords' => ['accordion'],
         'enqueue_style' => get_template_directory_uri().'/includes/gutenburg/custom-gutenberg-block.css',
+    ]);
+    acf_register_block_type([
+        'name' => 'team-lightbox',
+        'title' => __('Directors'),
+        'description' => __('A simple profile block with lightbox behavior.'),
+        'render_template' => 'includes/gutenburg/simple-lightbox.php',
+        'category' => 'formatting',
+        'icon' => 'welcome-widgets-menus',
+        'keywords' => ['accordion'],
     ]);
 }
 

@@ -17,7 +17,8 @@ get_header();
                             <div href="#panel_<?php echo $i; ?>" data-toggle="collapse"
                                  class="col-12 px-0 faq__question-block">
                                 <span class="faq__question-number"><strong><?php echo $i; ?></strong></span>
-                                <span class="faq__question-text fas <?php if ($i == 1) : ?> fa-minus <?php else : ?> fa-plus <?php endif; ?>"><strong><?php echo the_sub_field('question'); ?></strong></span>
+                                <span
+                                    class="faq__question-text fas <?php if ($i == 1) : ?> fa-minus <?php else : ?> fa-plus <?php endif; ?>"><strong><?php echo the_sub_field('question'); ?></strong></span>
                             </div><!-- faq__question-block -->
                         </div><!-- col -->
                         <div class="col-10 collapse <?php if ($i == 1) : ?> show <?php endif; ?>"
@@ -36,22 +37,22 @@ get_header();
 
         <section class="py-3">
             <div class="container">
-                    <div class="row py-3">
-                        <div class="col-12 px-0">
-                            <?php if (have_posts()) : ?>
-                                <h2><?php the_title(); ?></h2>
-                                <p>Please add markup to the page.php template…</p>
+                <div class="row py-3">
+                    <div class="col-12 px-0">
+                        <?php if (have_posts()) : ?>
+                            <h2><?php the_title(); ?></h2>
+                            <p>Please add markup to the page.php template…</p>
 
-                                <?php /* Start the Loop */ ?>
+                            <?php /* Start the Loop */ ?>
 
-                                <?php while (have_posts()) : the_post(); ?>
-                                    <?php the_content(); ?>
+                            <?php while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
 
-                                <?php endwhile; ?>
+                            <?php endwhile; ?>
 
-                            <?php endif; ?>
-                        </div>
+                        <?php endif; ?>
                     </div>
+                </div>
 
             </div><!-- container -->
         </section>
@@ -115,27 +116,33 @@ get_header();
         <div class="container py-2">
 
             <div class="row">
-                <div class="col-12">
 
-                    <?php
-                    if (function_exists('yoast_breadcrumb')) {
-                        yoast_breadcrumb('<p id="breadcrumbs" class="spr-breadcrumb mb-1">', '</p>');
-                    }
-                    ?>
+                <div class="col-lg-8">
 
-                    <h1 class="text-capitalize"><?php the_title(); ?></h1>
+                    <div class="pr-lg-2">
 
-                    <?php if (have_posts()) : ?>
+                        <h1 class="text-capitalize"><?php the_title(); ?></h1>
 
-                        <?php /* Start the Loop */ ?>
+                        <?php if (have_posts()) : ?>
 
-                        <?php while (have_posts()) : the_post(); ?>
-                            <?php the_content(); ?>
+                            <?php /* Start the Loop */ ?>
 
-                        <?php endwhile; ?>
+                            <?php while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
 
-                    <?php endif; ?>
+                            <?php endwhile; ?>
+
+                        <?php endif; ?>
+
+                    </div><!-- pr -->
+
                 </div><!-- col -->
+
+                <div class="col-lg-4">
+                    <?php get_template_part('partials/sidebar/contact-block'); ?>
+                </div><!-- col -->
+
+
             </div><!-- row -->
         </div><!-- container -->
 

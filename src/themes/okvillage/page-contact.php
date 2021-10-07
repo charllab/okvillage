@@ -11,56 +11,34 @@ get_header(); ?>
         <div class="py-3">
             <div class="container">
                 <div class="row justify-content-between">
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
 
-                        <?php if (have_posts()) : ?>
+                        <div class="pr-lg-2">
 
-                            <?php /* Start the Loop */ ?>
+                            <?php if (have_posts()) : ?>
 
-                            <?php while (have_posts()) : the_post(); ?>
+                                <?php /* Start the Loop */ ?>
 
-                                <h2><?php the_title(); ?></h2>
+                                <?php while (have_posts()) : the_post(); ?>
 
-                                <?php the_content(); ?>
+                                    <h2><?php the_title(); ?></h2>
 
-                            <?php endwhile; ?>
+                                    <?php the_content(); ?>
 
-                        <?php endif; ?>
+                                <?php endwhile; ?>
+
+                            <?php endif; ?>
+
+                        </div><!-- pr -->
 
                     </div><!-- col -->
 
-                    <div class="col-lg-5">
-                        <div class="pt-3 pb-2 px-2 bg-light">
-                            <h2>Contact Information</h2>
-                            <?php
-                            $removethese = array("(", " ", ")", "-");
-                            ?>
-                            <table>
-                                <tr>
-                                    <td><strong>Phone: </strong></td>
-                                    <td>
-                                        <a href="tel:+1<?php echo strip_tel(get_field('phone_number', 'option')); ?>"><?php echo get_field('phone_number', 'option'); ?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><strong>E-mail: </strong></td>
-                                    <td>
-                                        <a href="mailto:<?php echo get_field('email_address', 'option'); ?>"><?php echo get_field('email_address', 'option'); ?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Address: </strong></td>
-                                    <td><?php echo get_field('physical_address', 'option'); ?></td>
-                                </tr>
-                            </table>
-                        </div><!-- bg-light -->
+                    <div class="col-lg-4">
 
-                        <div class="px-0">
-                            <?php
-                            echo get_field('map_embed_code', 'option');
-                            ?>
-                        </div><!-- px-0 -->
+                        <?php get_template_part('partials/sidebar/contact-block'); ?>
+
                     </div><!-- col -->
+
                 </div><!-- row -->
 
             </div><!-- container -->
