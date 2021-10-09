@@ -24,7 +24,7 @@ $post_objects = get_field('director');
                     <path d="M19,4H5C3.89,4,3,4.9,3,6v12c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V6C21,4.9,20.11,4,19,4z M19,18H5V8h14V18z"></path>
                 </svg>
             </span>
-            Simple Profile
+            Director Profile
         </div>
     </div>
 
@@ -35,22 +35,29 @@ $post_objects = get_field('director');
         <div class="row">
         <?php $count = 0; ?>
         <?php foreach ($post_objects as $post): ?>
-            <div class="col-md-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4 col-xl-3 position-relative">
                 <?php if ($post['director_bio']) : ?>
                 <a data-toggle="modal"
                    data-target="#modal-<?php echo $count; ?>"
                    class="bio-link"
                 >
                 <?php endif; ?>
-                <img
-                    src="<?php echo $post['director_photo']; ?>"
-                    alt="<?php echo $post['director_name']; ?>"
-                    class="img-fluid"
-                >
-                <div class="text-center p-1">
-                    <p class="lead mb-250 text-uppercase font-weight-bold text-primary"><?php echo $post['director_name']; ?></p>
+                    <img
+                        src="<?php echo $post['director_photo']; ?>"
+                        alt="<?php echo $post['director_name']; ?>"
+                        class="img-fluid"
+                    >
+                    <div class="position-relative">
+                        <?php if ($post['director_bio']) : ?>
+                        <div class="btn text-center read-bio text-white bg-primary p-50">
+                            Read Bio
+                        </div>
+                <?php endif; ?>
+                    </div>
+                <div class="text-center p-50 mt-50 mb-75">
+                    <p class="director-name small mb-250 text-uppercase font-weight-bold text-dark"><?php echo $post['director_name']; ?></p>
                     <?php if ($post['director_title']) : ?>
-                    <p class="small"><?php echo $post['director_title']; ?></p>
+                    <p class="mb-0 smaller"><?php echo $post['director_title']; ?></p>
                     <?php endif; ?>
                 </div><!-- text-lead -->
                 <?php if ($post['director_bio']) : ?>

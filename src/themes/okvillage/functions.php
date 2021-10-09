@@ -158,12 +158,22 @@ function register_acf_block_types()
     ]);
     acf_register_block_type([
         'name' => 'team-lightbox',
-        'title' => __('Directors'),
+        'title' => __('Director Block'),
         'description' => __('A simple profile block with lightbox behavior.'),
         'render_template' => 'includes/gutenburg/simple-lightbox.php',
         'category' => 'formatting',
         'icon' => 'welcome-widgets-menus',
         'keywords' => ['accordion'],
+    ]);
+
+    acf_register_block_type([
+        'name' => 'sponsor-card',
+        'title' => __('Sponsor Card'),
+        'description' => __('A simple card with link behavior.'),
+        'render_template' => 'includes/gutenburg/sponsor-card.php',
+        'category' => 'formatting',
+        'icon' => 'welcome-widgets-menus',
+        'keywords' => ['cards'],
     ]);
 }
 

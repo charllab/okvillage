@@ -675,3 +675,32 @@ body.page-id-146 {
         color: white;
     }
 }
+.director-name {
+    @include media-breakpoint-up(lg) {
+        min-height: $spacer*2;
+        margin-bottom: 0;
+    }
+}
+.read-bio {
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: .8;
+    bottom: $spacer;
+    padding: $spacer;
+    text-transform: uppercase;
+    z-index: 2;
+    @include media-breakpoint-up(lg) {
+        bottom: $spacer/2;
+    }
+}
+.bio-link {
+    text-decoration: none !important;
+    color: $body-color;
+}
+
+.sponsor-logo {
+    @include media-breakpoint-up(lg) {
+        max-height: $spacer*4;
+    }
+}
