@@ -15,6 +15,9 @@ body {
     min-width: 320px;
 }
 
+// removing page flicker on js
+body { visibility: hidden;}
+
 body.css-loaded {
     .fa {
         visibility: visible;

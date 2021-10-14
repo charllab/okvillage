@@ -676,10 +676,7 @@ body.page-id-146 {
     }
 }
 .director-name {
-    @include media-breakpoint-up(lg) {
-        min-height: $spacer*2;
-        margin-bottom: 0;
-    }
+    font-size: 0.9rem;
 }
 .read-bio {
     position: absolute;
@@ -703,4 +700,12 @@ body.page-id-146 {
     @include media-breakpoint-up(lg) {
         max-height: $spacer*4;
     }
+}
+
+.wpmapblockrender {
+    border: 1px solid #dee2e6;
+}
+
+.scroll {
+    margin-top: -$spacer*2 !important;
 }

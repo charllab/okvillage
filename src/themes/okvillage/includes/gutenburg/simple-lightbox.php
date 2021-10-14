@@ -31,11 +31,11 @@ $post_objects = get_field('director');
 <?php else: ?>
 
 
-    <div class="container">
+    <div class="container mb-2">
         <div class="row">
         <?php $count = 0; ?>
         <?php foreach ($post_objects as $post): ?>
-            <div class="col-sm-6 col-lg-4 col-xl-3 position-relative">
+            <div class="col-sm-6 col-lg-4 position-relative">
                 <?php if ($post['director_bio']) : ?>
                 <a data-toggle="modal"
                    data-target="#modal-<?php echo $count; ?>"

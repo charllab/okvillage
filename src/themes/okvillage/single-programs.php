@@ -15,28 +15,14 @@ $posts = get_posts(array(
 
     <main id="content">
 
-
         <section class="bg-soft-btm-logo">
 
-            <div class="container px-0">
+            <div class="container px-lg-0">
                 <div class="row">
 
-                    <div class="col-lg-8 order-lg-1 pt-2">
+                    <div class="col-xxl-3">
 
-                        <?php the_post_thumbnail('full', array('class' => 'd-block img-fluid mx-auto')); ?>
-
-                        <div class="p-150">
-                            <h1 class="h2"><?php the_title(); ?></h1>
-                            <?php echo the_content(); ?>
-                            <iframe src="<?php the_field('google_map_iframe'); ?>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-
-
-                    </div><!-- col -->
-
-                    <div class="col-lg-4 order-lg-0">
-
-                        <div class="pr-lg-25">
+                        <div class="px-150 pl-lg-0 pr-lg-50">
 
                             <div class="bg-program-nav-logo mb-2">
                                 <p class="h3 pt-150 pb-1 mb-0">Our Programs</p>
@@ -63,7 +49,7 @@ $posts = get_posts(array(
 
                                         ?>
 
-                                        <a class="nav-link rounded-0 font-weight-normal text-body text-uppercase border-bottom <?php if ($custom_post_id === $currentID): ?> text-white active bg-white<?php endif; ?>"
+                                        <a class="nav-link rounded-0 font-weight-normal text-uppercase border-bottom <?php if ($custom_post_id === $currentID): ?> text-white active bg-primary<?php endif; ?>"
                                            href="<?php echo the_permalink(); ?>"
                                         >
                                             <?php echo the_title(); ?>
@@ -79,6 +65,20 @@ $posts = get_posts(array(
                             </div><!-- bg-dark -->
 
                         </div><!-- pr -->
+                    </div><!-- col -->
+
+                    <div class="col-xxl-9 pt-2">
+
+                        <div class="px-150">
+                            <h1 class="h2"><?php the_title(); ?></h1>
+                        </div>
+
+                        <?php the_post_thumbnail('full', array('class' => 'd-block img-fluid mx-auto')); ?>
+
+                        <div class="px-150 pt-150 pb-3">
+                            <?php echo the_content(); ?>
+                        </div>
+
                     </div><!-- col -->
 
                 </div><!-- row -->

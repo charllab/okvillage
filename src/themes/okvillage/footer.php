@@ -4,7 +4,7 @@
 
     <div class="block__tint-overlay position-absolute h-100"></div>
 
-    <section class="footer-cta bg-white pl-1">
+    <section class="footer-cta bg-white pl-1 d-none">
 
         <div class="d-flex align-items-center w-100 justify-content-between">
             <div>DO YOU HAVE ANY QUESTIONS?</div>
@@ -16,7 +16,7 @@
 
     </section><!-- footer-cta -->
 
-    <section class="text-white pt-12 pb-4">
+    <section class="text-white pt-6 pb-4">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-4">

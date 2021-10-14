@@ -20,30 +20,6 @@ body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description {
     padding-top: 8px;
 }
 
-// name field custom label styling
-
-#input_2_14 label {
-    font-style: italic;
-    font-size: .7rem;
-    color: lighten($primary, 25%);
-    margin-top: 8px;
-    padding-bottom: 16px;
-}
-
-
-// checkbox list items styling
-
-body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li {
-    margin-bottom: 0;
-    display: flex;
-    justify-content: start;
-    align-content: center;
-
-    label {
-        margin-left: $spacer/4;
-    }
-}
-
 // section break styling
 
 body .gform_wrapper .gform_body .gform_fields .gsection {
@@ -59,12 +35,6 @@ body .gform_wrapper .gform_body .gform_fields .gsection {
     }
 }
 
-// label sizing override
-
-.gform_wrapper label.gfield_label, .gform_wrapper legend.gfield_label {
-    font-size: .95rem !important;
-    text-transform: uppercase;
-}
 
 // over ride section titles
 
@@ -77,27 +47,24 @@ li.gsection {
 }
 
 .gform_wrapper .gsection .gfield_label, .gform_wrapper h2.gsection_title, .gform_wrapper h3.gform_title {
-    font-size: 1.025rem !important;
     color: lighten($dark, 7%);
 }
 
 // single text field
 
 body .gform_wrapper .gform_body .gform_fields .gfield input[type=text] {
-    border: 1px solid white;
-    background-color: $dark;
+    border: 1px solid $form-dark;
     color: $body-color;
     padding-left: 10px !important;
+    outline-color: $primary;
 }
 
 // dropdown style + remove default arrow
 
 body .gform_wrapper .gform_body .gform_fields .gfield select {
-    border: 1px solid lighten($primary, 25%);
+    border: 1px solid $form-dark;
     padding-left: 10px;
-    background-color: lighten($primary, 50%);
     color: $body-color;
-    // remove dropdown arrow
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -121,18 +88,23 @@ body .gform_wrapper .gform_body .gform_fields .gfield select {
 // textarea styling
 
 body .gform_wrapper .gform_body .gform_fields .gfield textarea {
-    border: 1px solid lighten($primary, 25%);
-    background-color: lighten($primary, 50%);
+    border: 1px solid $form-dark;
+    background-color: white;
     color: $body-color;
     padding-left: 10px !important;
+
+    &:focus-visible {
+        outline-color: $primary;
+    }
+
 }
 
 
 label {
     font-family: $font-family-sans-serif;
     margin-bottom: 0;
-    font-size: .777777778rem;
-    color: $yellow;
+    font-size: .5rem;
+    color: $dark;
     font-family: $headings-font-family;
 }
 
@@ -184,90 +156,8 @@ label {
 
     label {
         padding-right: .25rem;
-        font-size: .75rem;
-
-        @include media-breakpoint-up(lg) {
-            font-size: 90%;
-        }
     }
 }
-
-.num-increment-wrap {
-    min-width: 150px;
-    margin-left: auto;
-}
-
-.js-button-increment {
-    min-width: 40px;
-    justify-content: center;
-}
-
-
-.listing-page-sidemenu-form {
-    font-size: 1rem;
-
-    label {
-        font-size: 90%;
-        width: 100%;
-        cursor: pointer;
-        line-height: 1.75;
-    }
-
-    .custom-checkbox {
-        padding-bottom: .5rem;
-    }
-
-    input[type="radio"], input[type="checkbox"] {
-        margin-left: auto;
-        margin-bottom: .8rem;
-    }
-
-    .custom-control-label::before {
-        background: $white;
-    }
-}
-
-.listing-page-sidemenu-content-maxwidth {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.listing-page-sidemenu-block {
-    margin-bottom: 1rem;
-    @include media-breakpoint-up(lg) {
-        margin-bottom: 2rem;
-    }
-}
-
-.js-num-increment {
-    margin-bottom: $spacer;
-
-    .num-increment-wrap {
-        display: flex;
-    }
-
-    .form-control[readonly] {
-        width: 3rem;
-        margin: 0 5px;
-        border-radius: 0;
-        border: 1px solid rgba($primary, .25);
-        background-color: $white;
-    }
-
-    .btn {
-        font-family: $font-family-sans-serif;
-        font-weight: bold;
-        padding: .25rem .75rem;
-        font-size: 110%;
-    }
-}
-
-label.listing-page-sidemenu__label {
-    font-size: .95rem;
-    font-weight: 700;
-}
-
 
 .gform_button {
     @extend .btn;
@@ -286,8 +176,8 @@ body .gform_wrapper .gform_body .gform_fields .gfield input[type=text],
 body .gform_wrapper .gform_body .gform_fields .gfield input[type=email],
 body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel],
 body .gform_wrapper .gform_body .gform_fields .gfield textarea {
-    border: 1px solid white;
-    background-color: $dark;
+    border: 1px solid $form-dark;
+    background-color: white;
 }
 
 // thank you message
@@ -298,76 +188,6 @@ div#gform_confirmation_message_1 {
     font-weight: 700;
     padding: 10px;
     border-radius: 12px;
-}
-
-// custom select
-
-/* class applies to select element itself, not a wrapper element */
-.medium.gfield_select {
-    display: block;
-    color: #222;
-    line-height: 1.3;
-    padding: 5px 3px !important;
-    width: 100%;
-    max-width: 100%; /* useful when width is set to anything other than 100% */
-    box-sizing: border-box;
-    margin: 0;
-    border: 1px solid #bfbfbf;
-    box-shadow: none;
-    border-radius: 2px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-    linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
-    background-repeat: no-repeat, repeat;
-    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
-    background-position: right .7em top 50%, 0 0;
-    /* icon size, then gradient */
-    background-size: .65em auto, 100%;
-}
-
-/* Hide arrow icon in IE browsers */
-.medium.gfield_select::-ms-expand {
-    display: none;
-}
-
-/* Hover style */
-.medium.gfield_select:hover {
-    border-color: #888;
-}
-
-/* Focus style */
-.medium.gfield_select:focus {
-    border-color: #aaa;
-    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-    box-shadow: 0 0 0 3px -moz-mac-focusring;
-    color: #222;
-    outline: none;
-}
-
-/* Set options to normal weight */
-.medium.gfield_select option {
-    font-weight: normal;
-}
-
-/* Support for rtl text, explicit support for Arabic and Hebrew */
-*[dir="rtl"] .medium.gfield_select, :root:lang(ar) .medium.gfield_select, :root:lang(iw) .medium.gfield_select {
-    background-position: left .7em top 50%, 0 0;
-    padding: .6em .8em .5em 1.4em;
-}
-
-/* Disabled styles */
-.medium.gfield_select:disabled, .medium.gfield_select[aria-disabled=true] {
-    color: graytext;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
-}
-
-.medium.gfield_select:disabled:hover, .medium.gfield_select[aria-disabled=true] {
-    border-color: #aaa;
 }
 
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
@@ -512,40 +332,184 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
     }
 }
 
+#validation_message_1_9 {
+    margin-top: 10px;
+}
+
 // error message
 
 .gform_wrapper .gfield_error .gfield_repeater_cell label,
 .gform_wrapper .gfield_error label,
-.gform_wrapper [aria-invalid=true]+label,
-.gform_wrapper label+[aria-invalid=true] {
-    color: $yellow !important;
+.gform_wrapper [aria-invalid=true] + label,
+.gform_wrapper label + [aria-invalid=true] {
+    color: $primary;
 }
 
 body .gform_wrapper .gform_body .gform_fields .gfield_error {
-    background-color: $dark;
+    background-color: transparent;
+    border-color: transparent;
 }
+
 body .gform_wrapper .gform_body .gform_fields .gfield_error .validation_message {
     font-style: normal;
     font-weight: bold;
     color: white;
-    background-color: #f67600;
-    border: 1px solid #f67600;
+    background-color: $secondary;
+    border: 1px solid $secondary;
     padding: $spacer/5;
 }
 
-body .gform_wrapper .gform_validation_errors  {
-    background-color: #f67600;
+body .gform_wrapper .gform_validation_errors {
+    background-color: $secondary;
     border-width: 10px;
-    border-color: #f67600;
+    border-color: $secondary;
     padding: $spacer/2;
+
     h2 {
         color: white;
+
         &:after {
             display: none;
         }
     }
+
     .gform-icon--close:before {
         display: none;
     }
 
+}
+
+body {
+    .gform_legacy_markup_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 4px;
+    }
+
+}
+
+
+body {
+    .gform_legacy_markup_wrapper div.gfield_description.validation_error {
+        color: $secondary;
+    }
+
+    .gform_legacy_markup_wrapper .validation_message {
+        color: $secondary;
+    }
+
+    .gform_legacy_markup_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_legacy_markup_wrapper li.gfield_error textarea {
+        border: 1px solid $secondary;
+    }
+
+    .gform_legacy_markup_wrapper li.gfield_error div.ginput_complex.ginput_container label, .gform_legacy_markup_wrapper li.gfield_error ul.gfield_checkbox, .gform_legacy_markup_wrapper li.gfield_error ul.gfield_radio {
+        color: $secondary;
+    }
+
+    .gform_validation_errors > ol a {
+        color: $secondary;
+    }
+
+    .gform_legacy_markup_wrapper div.validation_error {
+        color: $secondary;
+        border-top: 2px solid $secondary;
+        border-bottom: 2px solid $secondary;
+    }
+
+    .gform_legacy_markup_wrapper ol.validation_list li {
+        list-style-type: decimal !important
+    }
+
+    .gform_legacy_markup_wrapper div.charleft {
+        margin-bottom: 6px;
+    }
+}
+
+body .gform_legacy_markup_wrapper ul li.gfield {
+    margin-top: 0 !important;
+}
+
+// applicant form styling
+
+body {
+    .gform_wrapper .gfield_required .gfield_required_custom, .gform_wrapper .gfield_required .gfield_required_text {
+        font-style: normal;
+    }
+    .gform_wrapper .gform_body .gform_fields .gfield select {
+        background-color: white;
+        outline-color: $primary;
+    }
+    .gchoice {
+        display: flex;
+
+    }
+    .gfield-choice-input {
+        margin-top: 3px !important;
+        margin-right: 6px;
+    }
+    .gform_wrapper.gravity-theme .gfield_list_icons button {
+        margin-bottom: 0;
+    }
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex .ginput_left label {
+    color: $body-color;
+    padding-left: 4px;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+    color: $body-color;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex .ginput_right label {
+    color: $body-color;
+    padding-left: 4px;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex .ginput_full label {
+    color: $body-color;
+    padding-left: 4px;
+}
+body .gform_wrapper .gform_body .gform_fields span label {
+    color: $body-color;
+    padding-left: 4px;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description {
+    color: $body-color;
+    font-style: normal;
+    line-height: 1.4;
+    padding-top: 0;
+    padding-left: 6px;
+    padding-bottom: 0;
+    margin-left: 2px;
+    margin-bottom: $spacer;
+    border-left: 2px solid #ccc;
+}
+
+body .ginput_container_consent {
+    label {
+        font-size: .8rem;
+        font-weight: bold;
+        margin-top: 0;
+    }
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+    color: $body-color;
+}
+
+#gfield_consent_description_3_37,
+#field_3_37 {
+    border: none;
+    overflow: visible;
+    display: block;
+    max-height: none;
+}
+
+body .gfield_list_groups {
+    margin-bottom: $spacer/2;
+}
+body .gfield_radio {
+    display: flex;
+    .gchoice {
+        margin-right: 10px;
+    }
 }
