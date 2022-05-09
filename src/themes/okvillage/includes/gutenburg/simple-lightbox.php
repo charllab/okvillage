@@ -31,7 +31,7 @@ $post_objects = get_field('director');
 <?php else: ?>
 
 
-    <div class="container mb-2">
+    <div class="container mb-2 px-0">
         <div class="row">
         <?php $count = 0; ?>
         <?php foreach ($post_objects as $post): ?>
