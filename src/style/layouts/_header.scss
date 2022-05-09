@@ -47,15 +47,13 @@
             color: $body-color;
         }
 
-        .navbar-nav .nav-item {
-            &:last-of-type {
+        .navbar-nav .nav-item.nav-link--btn {
                 a.nav-link {
                     color: white ;
                     background-color: $blue;
                     padding: $spacer*.8 $spacer*1.2;
                     letter-spacing: 1px;
                 }
-            }
         }
 
         .dropdown-menu {
