@@ -513,3 +513,52 @@ body .gfield_radio {
         margin-right: 10px;
     }
 }
+
+body {
+    .gform_wrapper.gravity-theme {
+        h3 {
+            margin-top: .75rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        h4 {
+            margin-top: .75rem;
+            margin-bottom: 0.5rem;
+            font-size: .8rem;
+            text-transform: uppercase;
+        }
+        h3, h4 {
+            max-width: none !important;
+        }
+        .gf-radio-buttons {
+            margin-bottom: .4rem !important;
+        }
+        .gf-checklist {
+            .gfield_checkbox {
+                width: 100%;
+                display: flex;
+                .gfield-choice-input {
+                    margin-top: 2.5px !important;
+                }
+                .gfield-choice-input+label {
+                    max-width: none;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .gf-consent {
+            .ginput_container_consent {
+                display: flex;
+                input[type="checkbox"] {
+                    margin-top: 3.5px !important;
+                    margin-right: 6px !important;
+                }
+                .gfield_consent_label {
+                    font-weight: normal !important;
+                }
+            }
+        }
+    }
+}
+
